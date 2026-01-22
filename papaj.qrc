@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>papaj.png</file>
+        <file>pudzian.png</file>
+    </qresource>
+</RCC>

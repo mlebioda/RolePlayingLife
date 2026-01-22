@@ -18,9 +18,14 @@ qt_add_qml_module(appRolePlayingLife
         Main.qml
 )
 
+qt_add_resources(appRolePlayingLife papaj
+     PREFIX "/icons"
+     FILES
+         papaj.png
+         pudzian.png
+ )
+
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
 set_target_properties(appRolePlayingLife PROPERTIES
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appRolePlayingLife
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
@@ -32,6 +37,10 @@ set_target_properties(appRolePlayingLife PROPERTIES
 target_link_libraries(appRolePlayingLife
     PRIVATE Qt6::Quick
 )
+
+# Krytyczne dla iOS/QML bundling:
+qt_import_qml_plugins(appRolePlayingLife)
+qt_finalize_executable(appRolePlayingLife)
 
 include(GNUInstallDirs)
 install(TARGETS appRolePlayingLife
