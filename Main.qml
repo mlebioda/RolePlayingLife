@@ -1,8 +1,21 @@
 import QtQuick
+import QtQuick.Controls
 
 Window {
-    width: 640
-    height: 480
     visible: true
-    title: qsTr("Hello World")
+    width: 390
+    height: 844
+    title: "RolePlayingLife"
+
+    Rectangle {
+        anchors.fill: parent
+        color: "white"
+    }
+
+    Text {
+        text: "Hello from Qt + QML 🚀"
+        anchors.centerIn: parent
+        color: "magenta"
+        font.pixelSize: 28
+    }
 }
